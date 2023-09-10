@@ -1,6 +1,9 @@
 from langchain.llms import HuggingFacePipeline
 from langchain.chains import RetrievalQA
+from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
+from langchain.memory import ConversationBufferMemory
+
 
 from config import llm_model_name
 #from prompts import rag_question
@@ -16,6 +19,13 @@ def load_llm():
     
     return llm
 
+#def recall_memory():
+
+"""Loads chat memory."""
+
+#memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+
+#return memory
 
 def generate_answer(llm,faiss_vectorstore,input_prompt,query):
     
